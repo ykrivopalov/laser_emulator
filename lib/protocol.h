@@ -12,7 +12,16 @@ namespace laser_emulator {
 class Laser;
 
 /// @brief Translates laser protocol command to Laser interface call
-/// @return laser protocol response
-std::string TranslateCall(Laser &laser, const std::string &command);
+class CommandTranslator {
+public:
+  CommandTranslator(Laser &laser);
+
+  /// @return laser protocol response
+  std::string Translate(const std::string &command);
+
+private:
+  Laser& laser_;
+  bool silly_mode_;
+};
 
 } // namespace laser_emulator
