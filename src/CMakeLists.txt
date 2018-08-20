@@ -1,0 +1,2 @@
+add_executable(laser_emulator main.cpp)
+target_link_libraries(laser_emulator liblaser_emulator)
